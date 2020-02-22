@@ -42,8 +42,9 @@ class Details extends React.Component {
     return (
       <div className="details">
         <Carousel media={media} />
+        <div>
           <h1>{name}</h1>
-          <h2>{`${animal} - ${breed} - ${location}`}</h2>
+          <h2>{`${animal} — ${breed} — ${location}`}</h2>
           <ThemeContext.Consumer>
             {([theme]) => (
               <button
@@ -57,12 +58,10 @@ class Details extends React.Component {
           <p>{description}</p>
           {showModal ? (
             <Modal>
-              <div>
-                <h1>Would you like to adopt {name}?</h1>
-                <div className="buttons">
-                  <button onClick={this.adopt}>Yes</button>
-                  <button onClick={this.toggleModal}>No, I am a monster</button>
-                </div>
+              <h1>Would you like to adopt {name}?</h1>
+              <div className="buttons">
+                <button onClick={this.adopt}>Yes</button>
+                <button onClick={this.toggleModal}>No, I am a monster</button>
               </div>
             </Modal>
           ) : null}
